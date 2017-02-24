@@ -50,6 +50,15 @@ hash-flooding DoS attacks.
 This document describes usage of SipHash-2-4 and SipHash-4-8 in Hashed
 Authentication Denial of Existence.
 
+...some text about SipHash being fast and used with NSEC3 White Lies...
+
+## Keyed Hash Function vs Salted Hash Function
+
+In cryptography, both keyed hashing and salted hashing append
+additional data to the input to be hashed with one-way function.
+
+[...some rationale why salt can be used as key...]
+
 ##  Conventions and Terminology
 
 The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**",
@@ -62,9 +71,24 @@ this document are to interpreted as described in RFC 6919 [@!RFC6919].
 
 #  NSEC3 and NSEC3PARAM Resource Records
 
+## NSEC3 and NSEC3PARAM Salt
+
+The SipHash family of algorithms has a key of a fixed length 128 bits.
+The salt defined in [@!RFC5155] Section 3.1.5 is used as a key for
+SipHash.  Therefore the Salt Length ([@!RFC5155] Section 3.1.4) must
+be equal to 16.
+
 ## SipHash-2-4 NSEC3 and NSEC3PARAM Resource Records
 
-SipHash-2-4 for use in Hashed Authenticated Denial of Existence
+SipHash-2-4 for use in Hashed Authenticated Denial of Existence is
+using Hash Algorithm number TBD1 in NSEC3 and NSEC3PARAM Resource
+Records.
+
+## SipHash-4-8 NSEC3 and NSEC3PARAM Resource Records
+
+SipHash-4-8 for use in Hashed Authenticated Denial of Existence is
+using Hash Algorithm number TBD2 in NSEC3 and NSEC3PARAM Resource
+Records.
 
 #  Security Considerations
 
